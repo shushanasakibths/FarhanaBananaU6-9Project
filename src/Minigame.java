@@ -1,2 +1,3 @@
+//tic
 public class Minigame {
 }
