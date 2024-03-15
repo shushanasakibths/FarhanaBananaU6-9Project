@@ -1,2 +1,3 @@
+//both
 public class Background {
 }
