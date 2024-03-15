@@ -1,3 +1,0 @@
-//both
-public class Background {
-}
