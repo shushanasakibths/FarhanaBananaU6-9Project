@@ -1,2 +1,2 @@
-public class MurderMystery {
+public class MurderMystery extends Storyline{
 }
