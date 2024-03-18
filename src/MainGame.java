@@ -14,8 +14,9 @@ public class MainGame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         label = new JLabel();
-        choice1 = new JButton();
-        choice2 = new JButton();
+        //not going to be the actual text used, just a tester
+        choice1 = new JButton("Woerk");
+        choice2 = new JButton("heyyy girl");
         choice1.setPreferredSize(new java.awt.Dimension(150, 150));
         choice2.setPreferredSize(new java.awt.Dimension(150, 150));
 
@@ -27,6 +28,14 @@ public class MainGame extends JFrame {
         panel1.add(choice1);
         panel1.add(choice2);
         add(panel1, BorderLayout.SOUTH);
+
+        choice1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
 
 
 
