@@ -17,7 +17,7 @@ public class Character {
     private String[] fairSkin;
 
     public Character() {
-
+        blueEyes = {"ocean", "sapphire", ""}
     }
 
 }
