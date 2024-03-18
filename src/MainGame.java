@@ -10,12 +10,14 @@ public class MainGame extends JFrame {
 
     public MainGame(){
         setTitle("Episode");
-        setSize(400,400);
+        setSize(600,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         label = new JLabel();
         choice1 = new JButton();
         choice2 = new JButton();
+        choice1.setPreferredSize(new java.awt.Dimension(150, 150));
+        choice2.setPreferredSize(new java.awt.Dimension(150, 150));
 
         //layout
         setLayout(new BorderLayout());
