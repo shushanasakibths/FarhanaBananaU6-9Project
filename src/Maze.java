@@ -17,7 +17,7 @@ public class Maze {
                 {'_', '_', '#', '_', '_', '_', '#', '_', '_', 'G'}
         };
         findStart();
-        setupGUI();
+
     }
 
     private void findStart() {
@@ -32,17 +32,6 @@ public class Maze {
         }
     }
 
-    private void setupGUI() {
-        frame = new JFrame("Maze");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
-
-        mazePanel = new MazePanel();
-        mazePanel.setMazeLayout(layout);
-        frame.add(mazePanel);
-
-        frame.setVisible(true);
-    }
 
     public char[][] getLayout() {
         return layout;
