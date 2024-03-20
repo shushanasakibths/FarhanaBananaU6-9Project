@@ -5,8 +5,6 @@ import javax.swing.*;
 public class Maze {
     private char[][] layout;
     private int startX, startY;
-    private JFrame frame;
-    private MazePanel mazePanel;
 
     public Maze() {
         this.layout = new char[][] {
@@ -33,10 +31,6 @@ public class Maze {
     }
 
 
-    public char[][] getLayout() {
-        return layout;
-    }
-
     public int getRows() {
         return layout.length;
     }
@@ -53,13 +47,6 @@ public class Maze {
         return startY;
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
-
-    public MazePanel getMazePanel() {
-        return mazePanel;
-    }
 
     public boolean isGoalReached(int x, int y) {
         return layout[x][y] == 'G';
