@@ -1,3 +1,4 @@
+//MAKE A BOT TO PLAY AGAINST PLAYER -> EPISODE IS A ONE PERSON GAME
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
