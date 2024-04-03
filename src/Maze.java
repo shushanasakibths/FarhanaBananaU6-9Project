@@ -1,7 +1,5 @@
 // SHUSHANA SAKI
 
-import javax.swing.*;
-
 public class Maze {
     private char[][] layout;
     private int startX, startY;
