@@ -43,6 +43,7 @@ public class MurderMystery extends Storyline{
         int choice1 = scanner.nextInt();
         if(choice1 == 1){
             System.out.println("Ashslay: Alright, let's go!");
+            new TicTacToe();
         } else if(choice1 == 2){
             System.out.println("Ashslay: How could you say that to me? You know how much your brother meant to me...");
             System.out.println(super.getPlayer() + ": Yeah my bad. Let's just go in.");
@@ -64,5 +65,4 @@ public class MurderMystery extends Storyline{
         }
 
     }
-
 }

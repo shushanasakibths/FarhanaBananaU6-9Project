@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Storyline {
     private YourName player;
+    private Scanner scanner;
     public Storyline(YourName player) {
         this.player = player;
+        scanner = new Scanner(System.in);
     }
 
     public YourName getPlayer() {
