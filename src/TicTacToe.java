@@ -7,6 +7,7 @@ public class TicTacToe implements ActionListener {
     private JButton[] buttons = new JButton[9];
     private JPanel panel;
     private boolean xPlayerTurn = true;
+    private boolean won = false;
 
     public TicTacToe(){
         frame = new JFrame("Tic-Tac-Toe");
@@ -27,6 +28,10 @@ public class TicTacToe implements ActionListener {
         frame.add(panel, BorderLayout.CENTER);
         frame.setSize(600, 600);
         frame.setVisible(true);
+    }
+
+    public boolean hasWon() {
+        return won;
     }
 
     public void actionPerformed(ActionEvent e){

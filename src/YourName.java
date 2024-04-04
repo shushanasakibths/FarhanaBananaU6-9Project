@@ -57,7 +57,9 @@ public class YourName {
     public String getLastName() {
         return lastName;
     }
-
+    public int getDiamonds() {
+        return diamondsCollected;
+    }
     public CharacterTraits getCharacter() {
         return character;
     }
@@ -85,4 +87,5 @@ public class YourName {
             System.out.println("Not enough diamonds!");
         }
     }
+
 }

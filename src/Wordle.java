@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class Wordle extends JFrame {
-    private static final String[] SECRET_WORDS = {
+
+    public static final String[] SECRET_WORDS = {
             "APPLE", "BRAIN", "CHAIR", "DOZEN", "EAGLE", "FAULT", "GRAND", "HOUSE", "IGLOO", "JOKER",
             "KNEEL", "LEMON", "MANGO", "NIGHT", "OASIS", "PUPPY", "QUICK", "ROBOT", "STORM", "TIGER",
             "UMBRA", "VIXEN", "WATER", "XENON", "YIELD", "ZEBRA", "ALIGN", "BEACH", "CANDY", "DRIVE",
@@ -19,6 +20,7 @@ public class Wordle extends JFrame {
     private int remainingAttempts;
     private JLabel feedbackLabel;
     private JTextField guessField;
+    private boolean won = false;
 
     public Wordle(String secretWord, int maxAttempts) {
         this.secretWord = secretWord.toUpperCase();
@@ -55,6 +57,10 @@ public class Wordle extends JFrame {
 
         setContentPane(mainPanel);
     }
+    public boolean hasWon() {
+        return won;
+    }
+
 
     private void checkGuess() {
         String guess = guessField.getText().toUpperCase();
@@ -80,6 +86,7 @@ public class Wordle extends JFrame {
 
         if (feedback.toString().equals("OOOOO")) {
             JOptionPane.showMessageDialog(this, "Congratulations! You guessed the word: " + secretWord, "Winner", JOptionPane.INFORMATION_MESSAGE);
+            won = true;
             System.exit(0);
         }
 
