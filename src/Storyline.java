@@ -10,12 +10,17 @@ public class Storyline {
         return player;
     }
 
+    public void title(){
+        System.out.println("Here is the title of the story!");
+    }
+
     public void description() {
         System.out.println("Here is the description of the story!");
     }
 
-    public void beginning() {
 
+    public void beginning() {
+        System.out.println("Here's the beginning");
     }
 
     public void middle() {
