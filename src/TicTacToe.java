@@ -28,71 +28,96 @@ public class TicTacToe implements ActionListener {
         frame.setVisible(true);
     }
 
+    //https://stackoverflow.com/questions/31216051/what-does-actionevent-e-mean
     public void actionPerformed(ActionEvent e){
         JButton button = (JButton) e.getSource();
-        if (xPlayerTurn){
+        if (xPlayerTurn) {
             button.setText("X");
-        }else{
-            button.setText("O");
+            button.setEnabled(false);
+            if (winnerCheck("X")) {
+                JOptionPane.showMessageDialog(frame, "You win!!");
+                reset();
+                return;
+            }
+            if (tieCheck()) {
+                JOptionPane.showMessageDialog(frame, "Tie game!!");
+                reset();
+                return;
+            }
+            xPlayerTurn = false;
+            computer();
         }
-        button.setEnabled(false);
-        xPlayerTurn = !xPlayerTurn;
-        winnerCheck();
+    }
+
+    public void computer(){
+        int random = -1;
+        for(int i = 0; i < 9; i++){
+            if(buttons[i].isEnabled()){
+                random = i;
+                break;
+            }
+        }
+        if(random != -1){
+            buttons[random].setText("O");
+            buttons[random]. setEnabled(false);
+
+            if(winnerCheck("O")){
+                JOptionPane.showMessageDialog(frame, "Computer Wins!!");
+                reset();
+            } else if(tieCheck()){
+                JOptionPane.showMessageDialog(frame, "Tie game!!");
+                reset();;
+            }
+            xPlayerTurn = true;
+        } else{
+            JOptionPane.showMessageDialog(frame, "No moves left");
+            reset();
+        }
     }
 
 
-    public void winnerCheck(){
+    public boolean winnerCheck(String user) {
         //rows
-        for (int i = 0; i < 9; i += 3){
-            if(buttons[i].getText().equals(buttons[i + 1].getText())
+        for (int i = 0; i < 9; i += 3) {
+            if (buttons[i].getText().equals(buttons[i + 1].getText())
                     && buttons[i].getText().equals(buttons[i + 2].getText())
-                    && !buttons[i].isEnabled()){
-                JOptionPane.showMessageDialog(frame, buttons[i].getText() + " wins!!");
-                reset();
-                return;
+                    && buttons[i].getText().equals(user)) {
+                return true;
             }
         }
 
         //columns
-        for (int i = 0; i < 3; i++){
-            if(buttons[i].getText().equals(buttons[i + 3].getText())
+        for (int i = 0; i < 3; i++) {
+            if (buttons[i].getText().equals(buttons[i + 3].getText())
                     && buttons[i].getText().equals(buttons[i + 6].getText())
-                    && !buttons[i].isEnabled()){
-                JOptionPane.showMessageDialog(frame, buttons[i].getText() + " wins!!");
-                reset();
-                return;
+                    && buttons[i].getText().equals(user)) {
+                return true;
             }
         }
 
         //diagonals
-        if(buttons[0].getText().equals(buttons[4].getText())
+        if (buttons[0].getText().equals(buttons[4].getText())
                 && buttons[0].getText().equals(buttons[8].getText())
-                && !buttons[0].isEnabled()){
-            JOptionPane.showMessageDialog(frame, buttons[0].getText() + " wins!!");
-            reset();
-            return;
+                && buttons[0].getText().equals(user)) {
+            return true;
         }
-        if(buttons[2].getText().equals(buttons[4].getText())
+        if (buttons[2].getText().equals(buttons[4].getText())
                 && buttons[2].getText().equals(buttons[6].getText())
-                && !buttons[2].isEnabled()){
-            JOptionPane.showMessageDialog(frame, buttons[2].getText() + " wins!!");
-            reset();
-            return;
+                && buttons[2].getText().equals(user)) {
+            return true;
         }
+        return false;
+    }
 
-        //tie
-        boolean tie = true;
+    public boolean tieCheck(){
         for(int i = 0; i < 9; i++){
             if(buttons[i].isEnabled()){
-                tie = false;
-                break;
+                return false;
             }
         }
-        if(tie){
-            JOptionPane.showMessageDialog(frame, "Tie game!!");
-            reset();
-        }
+        return true;
     }
+
 
     public void reset(){
         for(int i = 0; i < 9; i++){
