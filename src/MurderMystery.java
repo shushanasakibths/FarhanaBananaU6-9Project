@@ -37,7 +37,7 @@ public class MurderMystery extends Storyline{
                 "this huge mansion, it feels wayyy too empty and so I also invited \n" +
                 "Elislaybeth and Jesslayca.'");
 
-        System.out.println(super.getPlayer().getFirstName() + "It's no problem, Ashslay");
+        System.out.println(super.getPlayer().getFirstName() + ": It's no problem, Ashslay");
         System.out.println("CHOICE: What do you want to say to Ashslay next?\n" + "1) Let's just go inside and prepare...  OR  2) Yeah I bet it's hard, having such a huggeee mansion all to yourself");
         int choice = super.getScanner().nextInt();
         switch (choice){
@@ -60,7 +60,7 @@ public class MurderMystery extends Storyline{
         System.out.println(super.getPlayer().getFirstName() + ": Oh wow, time has flown by! i think we should head for bed for now.");
         System.out.println("Ashslay: What, no!! Let's just play one more game, hide and seek!");
         System.out.println("CHOICE: 1) Really? Hide and Seek? What are you, a kid?  OR  2)Ok, let's play.");
-
+        choice = super.getScanner().nextInt();
         switch (choice){
             case 1:
                 System.out.println("Ashslay: 'Aww don't be like that, I just wanted to play something that brings good memories...");
@@ -86,7 +86,7 @@ public class MurderMystery extends Storyline{
                     System.out.println("You decide to wear your special hide and seek outfit, practically already declaring you winner.");
                     System.out.println("Everyone squeals over your extraordinary choice of apparel. ");
                 } else{
-                    System.out.println("You do not have enough diamonds to wear thsi outfit!!");
+                    System.out.println("You do not have enough diamonds to wear this outfit!!");
                     System.out.println("Would you like to play some mini games to acquire more?");
                     System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Maze\n4) Play Rock Paper Scissors\n5) Be broke then...");
 
