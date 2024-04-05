@@ -57,11 +57,24 @@ public class Wordle extends JFrame {
 
         setContentPane(mainPanel);
     }
+
+    public void playGame(GameCallback callback) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Wordle.this.setVisible(true);
+                callback.gameCompleted(hasWon());
+            }
+        });
+    }
+
+    public interface GameCallback {
+        void gameCompleted(boolean hasWon);
+    }
+
     public boolean hasWon() {
         return won;
     }
-
-
     private void checkGuess() {
         String guess = guessField.getText().toUpperCase();
         if (guess.length() != 5) {
@@ -86,7 +99,7 @@ public class Wordle extends JFrame {
 
         if (feedback.toString().equals("OOOOO")) {
             JOptionPane.showMessageDialog(this, "Congratulations! You guessed the word: " + secretWord, "Winner", JOptionPane.INFORMATION_MESSAGE);
-            won = true;
+            setVisible(false);
             System.exit(0);
         }
 

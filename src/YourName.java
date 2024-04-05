@@ -15,7 +15,6 @@ public class YourName {
     public YourName() {
         this.inventory = new ArrayList<>();
         this.diamondsCollected = 0;
-        customizeCharacter();
         scanner = new Scanner(System.in);
     }
 
