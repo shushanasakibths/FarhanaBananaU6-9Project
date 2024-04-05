@@ -2,6 +2,7 @@
 
 import java.awt.*;
 import java.sql.SQLOutput;
+import java.util.Random;
 
 public class BillionaireRomance extends Storyline {
 
@@ -75,10 +76,24 @@ public class BillionaireRomance extends Storyline {
 
                     switch (choice) {
                         case 1:
-
+                            Random random = new Random();
+                            String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
+                            Wordle wordleGame = new Wordle(secretWord, 6);
+                            if (wordleGame.hasWon()) {
+                                super.getPlayer().earnDiamonds(5);
+                                System.out.println("You've earned 5 diamonds!");
+                            } else {
+                                System.out.println("You failed to win the Wordle game. Moving on...");
+                            }
                             break;
                         case 2:
-
+                            TicTacToe tictactoeGame = new TicTacToe();
+                            if (tictactoeGame.hasWon()) {
+                                super.getPlayer().earnDiamonds(5);
+                                System.out.println("You've earned 5 diamonds!");
+                            } else {
+                                System.out.println("You failed to win the TicTacToe game. Moving on...");
+                            }
                             break;
                         case 3:
 

@@ -6,8 +6,10 @@ public class RockPaperScissors extends JFrame implements ActionListener {
     private JLabel result;
     private int playerScore;
     private int computerScore;
+    private boolean won;
 
     public RockPaperScissors(){
+        won = false;
         setTitle("Rock, Paper, Scissors");
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,6 +33,10 @@ public class RockPaperScissors extends JFrame implements ActionListener {
         panel.add(result);
         add(panel);
         setVisible(true);
+    }
+
+    public boolean hasWon() {
+        return won;
     }
 
     public void actionPerformed(ActionEvent e){
@@ -60,6 +66,7 @@ public class RockPaperScissors extends JFrame implements ActionListener {
         } else if((player.equals("Rock") && computer.equals("Scissors")) ||
                 (player.equals("Paper") && computer.equals("Rock")) ||
                 (player.equals("Scissors") && computer.equals("Paper"))){
+            won = true;
             return "You win!!";
         } else{
             return "Computer wins!";
