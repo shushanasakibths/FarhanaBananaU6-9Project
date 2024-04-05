@@ -93,6 +93,8 @@ public class BillionaireRomance extends Storyline {
                 System.out.println("Invalid choice. Please select either 1 or 2.");
                 break;
         }
+        System.out.println("The photographer insists you two get up close and personal for the photos.");
+        System.out.println("It is terribly awkward, but you comply for appearance's sakes.");
 
     }
 

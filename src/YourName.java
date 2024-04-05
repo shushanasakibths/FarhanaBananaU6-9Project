@@ -9,12 +9,12 @@ public class YourName {
     private String lastName;
     private CharacterTraits character;
     private List<String> inventory;
-    private int diamondsCollected;
+    private static int diamondsCollected;
     private Scanner scanner;
 
     public YourName() {
         this.inventory = new ArrayList<>();
-        this.diamondsCollected = 0;
+        diamondsCollected = 0;
         scanner = new Scanner(System.in);
     }
 
@@ -75,11 +75,11 @@ public class YourName {
     }
 
 
-    public void earnDiamonds(int amount) {
+    public static void earnDiamonds(int amount) {
         diamondsCollected += amount;
     }
 
-    public void spendDiamonds(int amount) {
+    public static void spendDiamonds(int amount) {
         if (diamondsCollected >= amount) {
             diamondsCollected -= amount;
         } else {

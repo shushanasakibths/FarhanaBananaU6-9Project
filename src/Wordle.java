@@ -1,5 +1,4 @@
 // SHUSHANA SAKI
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,17 +16,18 @@ public class Wordle extends JFrame {
     };
 
     private String secretWord;
+    private int maxAttempts;
     private int remainingAttempts;
     private JLabel feedbackLabel;
     private JTextField guessField;
-    private boolean won = false;
 
     public Wordle(String secretWord, int maxAttempts) {
         this.secretWord = secretWord.toUpperCase();
+        this.maxAttempts = maxAttempts;
         this.remainingAttempts = maxAttempts;
 
         setTitle("Wordle");
-        setSize(500, 300);
+        setSize(500, 300); // Increased size of the JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -41,7 +41,7 @@ public class Wordle extends JFrame {
 
         JPanel guessPanel = new JPanel();
         JLabel guessLabel = new JLabel("Enter your guess:");
-        guessField = new JTextField(15);
+        guessField = new JTextField(15); // Increased size of the JTextField
         guessPanel.add(guessLabel);
         guessPanel.add(guessField);
         mainPanel.add(guessPanel, BorderLayout.CENTER);
@@ -58,23 +58,6 @@ public class Wordle extends JFrame {
         setContentPane(mainPanel);
     }
 
-    public void playGame(GameCallback callback) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                Wordle.this.setVisible(true);
-                callback.gameCompleted(hasWon());
-            }
-        });
-    }
-
-    public interface GameCallback {
-        void gameCompleted(boolean hasWon);
-    }
-
-    public boolean hasWon() {
-        return won;
-    }
     private void checkGuess() {
         String guess = guessField.getText().toUpperCase();
         if (guess.length() != 5) {
@@ -87,9 +70,9 @@ public class Wordle extends JFrame {
             char guessChar = guess.charAt(i);
             char secretChar = secretWord.charAt(i);
             if (guessChar == secretChar) {
-                feedback.append("O");
+                feedback.append(secretChar);
             } else if (secretWord.contains(String.valueOf(guessChar))) {
-                feedback.append("X");
+                feedback.append("+");
             } else {
                 feedback.append("-");
             }
@@ -97,9 +80,8 @@ public class Wordle extends JFrame {
 
         feedbackLabel.setText(feedback.toString());
 
-        if (feedback.toString().equals("OOOOO")) {
+        if (feedback.toString().equals(secretWord)) {
             JOptionPane.showMessageDialog(this, "Congratulations! You guessed the word: " + secretWord, "Winner", JOptionPane.INFORMATION_MESSAGE);
-            setVisible(false);
             System.exit(0);
         }
 
@@ -116,7 +98,7 @@ public class Wordle extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Wordle wordle = new Wordle(secretWord, 6);
+                Wordle wordle = new Wordle(secretWord, 6); // Change the max attempts as needed
                 wordle.setVisible(true);
             }
         });
