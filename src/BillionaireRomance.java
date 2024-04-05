@@ -70,44 +70,14 @@ public class BillionaireRomance extends Storyline {
                 } else {
                     System.out.println("You do not have enough diamonds to make this choice.");
                     System.out.println("Would you like to play minigames to earn diamonds?");
-                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Maze\n4) Play Rock Paper Scissors\n5) Continue without the outfit");
+                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Maze\n4) Play Rock Paper Scissors\n5) Be broke then...");
 
                     choice = super.getScanner().nextInt();
 
-                    switch (choice) {
-                        case 1:
-                            Random random = new Random();
-                            String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
-                            Wordle wordleGame = new Wordle(secretWord, 6);
-                            if (wordleGame.hasWon()) {
-                                super.getPlayer().earnDiamonds(5);
-                                System.out.println("You've earned 5 diamonds!");
-                            } else {
-                                System.out.println("You failed to win the Wordle game. Moving on...");
-                            }
-                            break;
-                        case 2:
-                            TicTacToe tictactoeGame = new TicTacToe();
-                            if (tictactoeGame.hasWon()) {
-                                super.getPlayer().earnDiamonds(5);
-                                System.out.println("You've earned 5 diamonds!");
-                            } else {
-                                System.out.println("You failed to win the TicTacToe game. Moving on...");
-                            }
-                            break;
-                        case 3:
-
-                            break;
-                        case 4:
-
-                            break;
-                        case 5:
-                            System.out.println("You decide to continue without the stunning outfit.");
-                            System.out.println("Chad looks slightly disappointed but tries to hide it.");
-                            break;
-                        default:
-                            System.out.println("Invalid choice. Please select a valid option.");
-                            break;
+                    if (choice == 5) {
+                        System.out.println("Be broke then...");
+                    } else {
+                        super.playMinigames(choice);
                     }
                 }
                 break;

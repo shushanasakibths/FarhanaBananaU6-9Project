@@ -10,10 +10,15 @@ public class MazeGame extends JFrame implements KeyListener {
     private Player player;
     private JPanel mazePanel;
     private final int CELL_SIZE = 30;
+    private boolean won;
 
     public MazeGame() {
         setupGame();
         setupUI();
+    }
+
+    public boolean hasWon() {
+        return won;
     }
 
     private void setupGame() {
@@ -84,6 +89,7 @@ public class MazeGame extends JFrame implements KeyListener {
         if (newX >= 0 && newX < maze.getRows() && newY >= 0 && newY < maze.getCols() && !maze.isObstacle(newX, newY)) {
             player.move(direction);
             if (maze.isGoalReached(player.getX(), player.getY())) {
+                won = true;
                 JOptionPane.showMessageDialog(this, "Congratulations! You reached the goal!");
             }
             repaint();
