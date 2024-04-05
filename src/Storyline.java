@@ -46,7 +46,7 @@ public class Storyline {
     }
 
     public void playMinigames(int choice) {
-        switch (choice) {
+        /*switch (choice) {
             case 1:
                 Random random = new Random();
                 String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
@@ -93,6 +93,23 @@ public class Storyline {
             default:
                 System.out.println("Invalid choice. Please select a valid option.");
                 break;
+        }*/
+
+        switch (choice){
+            case 1:
+                playWordle();
+                break;
+            case 2:
+                playTicTacToe();
+                break;
+            case 3:
+                playRPS();
+                break;
+            case 4:
+                playMazeGame();
+                break;
+            default:
+                System.out.println("Invalid choice. Please select a valid option.");
         }
     }
 
@@ -116,6 +133,32 @@ public class Storyline {
     }
 
     private void playTicTacToe(){
-        TicTacToe
+        TicTacToe tictactoeGame = new TicTacToe();
+        if (tictactoeGame.hasWon()) {
+            getPlayer().earnDiamonds(5);
+            System.out.println("You've earned 5 diamonds!");
+        } else {
+            System.out.println("You failed to win the TicTacToe game. Moving on...");
+        }
+    }
+
+    private void playRPS(){
+        RockPaperScissors rpsGame = new RockPaperScissors();
+        if (rpsGame.hasWon()) {
+            getPlayer().earnDiamonds(5);
+            System.out.println("You've earned 5 diamonds!");
+        } else {
+            System.out.println("You failed to win the Rock Paper Scissors game. Moving on...");
+        }
+    }
+
+    private void playMazeGame(){
+        MazeGame mazeGame = new MazeGame();
+        if (mazeGame.hasWon()) {
+            getPlayer().earnDiamonds(5);
+            System.out.println("You've earned 5 diamonds!");
+        } else {
+            System.out.println("You failed to win the Maze game. Moving on...");
+        }
     }
 }
