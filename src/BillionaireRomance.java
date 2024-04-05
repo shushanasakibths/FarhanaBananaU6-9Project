@@ -28,7 +28,7 @@ public class BillionaireRomance extends Storyline {
         System.out.println(Colors.BLUE + "Chad: " + Colors.RESET + super.getPlayer().getFirstName() + "...pleasure to meet you.");
         System.out.println("His voice drips with sarcasm, speaking to you as if you were a child who did wrong.");
         System.out.println("Chad Archibald the Fifteenth, top 5 billionaire under 40 on Forbes, CEO of Vanguard. You've met him before, though far less civil.");
-        System.out.println("You raise your head, staring him dead in the eye. Your parents have arranged a marriage for you with the man who killed your sister.");
+        System.out.println("You raise your head, staring him dead in the eye. Your parents have arranged a marriage for you with the man who killed your sister. You have a year till the wedding...");
         System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Greet him with a strained smile\n2) Insult him.");
         int choice = super.getScanner().nextInt();
         switch (choice) {
@@ -67,6 +67,9 @@ public class BillionaireRomance extends Storyline {
                     super.getPlayer().spendDiamonds(10);
                     System.out.println("You decide to wear the stunning outfit, feeling confident and elegant.");
                     System.out.println("Chad's eyes widen appreciatively when he sees you.");
+                    System.out.println("The way his eyes rake over your form makes your heart flutter.");
+                    System.out.println(Colors.BLUE + "Chad: " + Colors.RESET + " You look...befitting..");
+                    System.out.println("He clears his throat, turning away. Is that blush on his cheeks?!");
                 } else {
                     System.out.println("You do not have enough diamonds to make this choice.");
                     System.out.println("Would you like to play minigames to earn diamonds?");
@@ -75,7 +78,8 @@ public class BillionaireRomance extends Storyline {
                     choice = super.getScanner().nextInt();
 
                     if (choice == 5) {
-                        System.out.println("Be broke then...");
+                        System.out.println("You decide to continue without the stunning outfit.");
+                        System.out.println("Chad looks slightly disappointed but tries to hide it.");
                     } else {
                         super.playMinigames(choice);
                     }
@@ -83,12 +87,13 @@ public class BillionaireRomance extends Storyline {
                 break;
             case 2:
                 System.out.println("You decide to take the photoshoot in your old hoodie.");
-                System.out.println("Chad raises an eyebrow, clearly unimpressed.");
+                System.out.println("Chad raises an eyebrow, clearly unimpressed. And what's that horrid smell?");
                 break;
             default:
                 System.out.println("Invalid choice. Please select either 1 or 2.");
                 break;
         }
+
     }
 
 }
