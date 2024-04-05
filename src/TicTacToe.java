@@ -6,8 +6,10 @@ public class TicTacToe implements ActionListener {
     private JButton[] buttons = new JButton[9];
     private JPanel panel;
     private boolean xPlayerTurn = true;
+    private boolean won;
 
     public TicTacToe(){
+        won = false;
         frame = new JFrame("Tic-Tac-Toe");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -28,6 +30,10 @@ public class TicTacToe implements ActionListener {
         frame.setVisible(true);
     }
 
+    public boolean hasWon() {
+        return won;
+    }
+
     //https://stackoverflow.com/questions/31216051/what-does-actionevent-e-mean
     public void actionPerformed(ActionEvent e){
         JButton button = (JButton) e.getSource();
@@ -36,6 +42,7 @@ public class TicTacToe implements ActionListener {
             button.setEnabled(false);
             if (winnerCheck("X")) {
                 JOptionPane.showMessageDialog(frame, "You win!!");
+                won = true;
                 reset();
                 return;
             }

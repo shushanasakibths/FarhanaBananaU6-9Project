@@ -17,12 +17,16 @@ public class CharacterTraits {
     private static final String[] MED_SKIN = {"beige", "almond", "hazel", "sand", "neutral"};
     private static final String[] FAIR_SKIN = {"pale", "ivory", "light", "rosy", "porcelain"};
 
+    private static final String[] BOY = {"son"};
+    private static final String[] DAUGHTER = {"daughter"};
+    private static final String[] NON_BINARY = {"child"};
+
     private String[] eyes;
     private String[] hair;
     private String[] curly;
     private String[] skin;
 
-    public CharacterTraits(String eyeColor, String hairColor, boolean isCurly, String skinColor) {
+    public CharacterTraits(String eyeColor, String hairColor, boolean isCurly, String skinColor, String gender) {
         switch (eyeColor.toLowerCase()) {
             case "blue":
                 eyes = BLUE_EYES;
@@ -90,4 +94,6 @@ public class CharacterTraits {
     public String[] getSkin() {
         return skin;
     }
+
+
 }

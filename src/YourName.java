@@ -19,8 +19,7 @@ public class YourName {
         scanner = new Scanner(System.in);
     }
 
-    private void customizeCharacter() {
-
+    public void customizeCharacter() {
 
         System.out.println("Enter your first name:");
         this.firstName = scanner.nextLine();
@@ -42,7 +41,10 @@ public class YourName {
         System.out.println("Choose skin color (dark, brown, tan, medium, fair):");
         String skinColor = scanner.nextLine();
 
-        character = new CharacterTraits(eyeColor, hairColor, isCurly, skinColor);
+        System.out.println("What do you identify as? (girl, boy, nonbinary):");
+        String gender = scanner.nextLine();
+
+        character = new CharacterTraits(eyeColor, hairColor, isCurly, skinColor, gender);
     }
 
 
@@ -64,9 +66,7 @@ public class YourName {
         return character;
     }
 
-    public int getDiamondsCollected() {
-        return diamondsCollected;
-    }
+
     public void addItem(String item) {
         inventory.add(item);
     }

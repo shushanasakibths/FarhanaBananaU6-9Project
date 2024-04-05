@@ -12,6 +12,16 @@ public class Storyline {
         return player;
     }
 
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void start() {
+        beginning();
+        middle();
+        end();
+    }
+
     public void title(){
         System.out.println("Here is the title of the story!");
     }
@@ -26,10 +36,10 @@ public class Storyline {
     }
 
     public void middle() {
-
+        System.out.println("Here's the middle");
     }
 
     public void end() {
-
+        System.out.println("Here's the end");
     }
 }
