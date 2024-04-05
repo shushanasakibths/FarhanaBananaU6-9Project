@@ -88,24 +88,8 @@ public class Storyline {
 
     //trying different approach
 
-    private void playWordle(){
-        Random random = new Random();
-        String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
-        Wordle wordleGame = new Wordle(secretWord, 6);
-        wordleGame.playGame(new Wordle.GameCallback() {
-            @Override
-            public void gameCompleted(boolean hasWon) {
-                if (hasWon) {
-                    getPlayer().earnDiamonds(5);
-                    System.out.println("You've earned 5 diamonds!");
-                } else {
-                    System.out.println("You failed to win the Wordle game. Moving on...");
-                }
-            }
-        });
-    }
 
-    private void playTicTacToe(){
-        TicTacToe
-    }
+
+
+
 }
