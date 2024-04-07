@@ -1,8 +1,14 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class WordleReg {
-    private static final String[] SECRET_WORDS = {"HELLO", "WORLD", "JAVA", "PROGRAMMING", "COMPUTER"};
+public class WordleReg extends YourName {
+    public static final String[] SECRET_WORDS = {
+            "APPLE", "BRAIN", "CHAIR", "DOZEN", "EAGLE", "FAULT", "GRAND", "HOUSE", "IGLOO", "JOKER",
+            "KNEEL", "LEMON", "MANGO", "NIGHT", "OASIS", "PUPPY", "QUICK", "ROBOT", "STORM", "TIGER",
+            "UMBRA", "VIXEN", "WATER", "XENON", "YIELD", "ZEBRA", "ALIGN", "BEACH", "CANDY", "DRIVE",
+            "ELBOW", "FLYER", "GHOST", "HUMOR", "INFER", "JEWEL", "KNIFE", "LIGHT", "MUSIC", "NOVEL",
+            "OCEAN", "PANDA", "QUICK", "ROUND", "SLEEP", "TABLE", "UNCLE", "VIRUS", "WOMAN", "YOUTH"
+    };
 
     private final String secretWord;
     private final int maxAttempts;
@@ -28,7 +34,8 @@ public class WordleReg {
 
 
             if (guess.equals(secretWord)) {
-                System.out.println("Congratulations! You guessed the word: " + secretWord);
+                System.out.println("Congratulations! You guessed the word: " + secretWord + ". Here's some diamonds!");
+                super.earnDiamonds(5);
                 return;
             } else {
                 String feedback = provideFeedback(guess);
@@ -38,7 +45,7 @@ public class WordleReg {
         }
 
 
-        System.out.println("\nSorry, you ran out of attempts.");
+        System.out.println("\nSorry, you ran out of attempts. HAHA");
         System.out.println("The secret word was: " + secretWord);
     }
 

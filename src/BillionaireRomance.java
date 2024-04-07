@@ -77,7 +77,7 @@ public class BillionaireRomance extends Storyline {
 
                     choice = super.getScanner().nextInt();
 
-                    if (choice == 5) {
+                    if (choice > 4 || choice < 1) {
                         System.out.println("You decide to continue without the stunning outfit.");
                         System.out.println("Chad looks slightly disappointed but tries to hide it.");
                     } else {

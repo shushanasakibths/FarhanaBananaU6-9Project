@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class Wordle extends JFrame {
+public class Wordle extends JFrame  {
 
     public static final String[] SECRET_WORDS = {
             "APPLE", "BRAIN", "CHAIR", "DOZEN", "EAGLE", "FAULT", "GRAND", "HOUSE", "IGLOO", "JOKER",

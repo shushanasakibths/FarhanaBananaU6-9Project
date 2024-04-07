@@ -46,43 +46,20 @@ public class Storyline {
     }
 
     public void playMinigames(int choice) {
-        switch (choice) {
-            case 1:
-                Random random = new Random();
-                String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
-                Wordle wordleGame = new Wordle(secretWord, 6);
-
-                break;
-            case 2:
-                TicTacToe tictactoeGame = new TicTacToe();
-                if (tictactoeGame.hasWon()) {
-                    getPlayer().earnDiamonds(5);
-                    System.out.println("You've earned 5 diamonds!");
-                } else {
-                    System.out.println("You failed to win the TicTacToe game. Moving on...");
-                }
-                break;
-            case 3:
-                RockPaperScissors rpsGame = new RockPaperScissors();
-                if (rpsGame.hasWon()) {
-                    getPlayer().earnDiamonds(5);
-                    System.out.println("You've earned 5 diamonds!");
-                } else {
-                    System.out.println("You failed to win the Rock Paper Scissors game. Moving on...");
-                }
-                break;
-            case 4:
-                MazeGame mazeGame = new MazeGame();
-                if (mazeGame.hasWon()) {
-                    getPlayer().earnDiamonds(5);
-                    System.out.println("You've earned 5 diamonds!");
-                } else {
-                    System.out.println("You failed to win the Maze game. Moving on...");
-                }
-                break;
-            default:
-                System.out.println("Invalid choice. Please select a valid option.");
-                break;
+        if (choice == 1) {
+            Random random = new Random();
+            String secretWord = Wordle.SECRET_WORDS[random.nextInt(Wordle.SECRET_WORDS.length)];
+            WordleReg wordleGame = new WordleReg(secretWord, 6);
+            wordleGame.play();
+        } else if (choice == 2) {
+            TicTacToeReg tictactoeGame = new TicTacToeReg();
+            tictactoeGame.playGame();
+        } else if (choice == 3) {
+            RPSReg rpsGame = new RPSReg();
+        } else if (choice == 4) {
+            MazeGame mazeGame = new MazeGame();
+        } else {
+            System.out.println("Tough luck! No diamonds for you...");
         }
     }
 
