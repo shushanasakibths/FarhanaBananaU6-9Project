@@ -73,7 +73,7 @@ public class BillionaireRomance extends Storyline {
                 } else {
                     System.out.println("You do not have enough diamonds to make this choice.");
                     System.out.println("Would you like to play minigames to earn diamonds?");
-                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Maze\n4) Play Rock Paper Scissors\n5) Be broke then...");
+                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Rock Paper Scissors\n4) Play Maze\n5) Be broke then...");
 
                     choice = super.getScanner().nextInt();
 

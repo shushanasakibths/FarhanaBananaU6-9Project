@@ -2,10 +2,11 @@ import java.util.Scanner;
 import java.util.Random;
 public class RPSReg {
     public static void main(String[] args) {
-        play();
+        RPSReg game = new RPSReg();
+        game.play();
     }
 
-    public static void play(){
+    public void play(){
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -32,6 +33,7 @@ public class RPSReg {
                     break;
                 case 1:
                     computer = "paper";
+                    break;
                 case 2:
                     computer = "scissors";
                     break;

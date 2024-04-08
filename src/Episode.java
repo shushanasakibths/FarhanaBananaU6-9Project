@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Episode {
+public class Episode extends YourName{
     private Scanner scanner;
     private YourName player;
     private ArrayList<Storyline> stories;

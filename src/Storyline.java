@@ -24,7 +24,7 @@ public class Storyline {
         end();
     }
 
-    public void title(){
+    public void title() {
         System.out.println("Here is the title of the story!");
     }
 
@@ -56,16 +56,12 @@ public class Storyline {
             tictactoeGame.playGame();
         } else if (choice == 3) {
             RPSReg rpsGame = new RPSReg();
+            rpsGame.play();
         } else if (choice == 4) {
-            MazeGame mazeGame = new MazeGame();
+            MazeReg mazeGame = new MazeReg();
+            mazeGame.playGame();
         } else {
             System.out.println("Tough luck! No diamonds for you...");
         }
     }
-
-
-
-
-
-
 }

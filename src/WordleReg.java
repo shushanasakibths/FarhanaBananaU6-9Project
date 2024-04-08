@@ -79,5 +79,4 @@ public class WordleReg extends YourName {
         WordleReg wordle = new WordleReg(secretWord, 6);
         wordle.play();
     }
-
 }

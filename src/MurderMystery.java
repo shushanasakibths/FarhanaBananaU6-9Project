@@ -43,7 +43,6 @@ public class MurderMystery extends Storyline{
         switch (choice){
             case 1:
                 System.out.println("Ashslay: Alright, let's go!");
-                new TicTacToe();
                 break;
             case 2:
                 System.out.println("Ashslay: How could you say that to me? You know how much your brother meant to me...");
@@ -88,7 +87,7 @@ public class MurderMystery extends Storyline{
                 } else{
                     System.out.println("You do not have enough diamonds to wear this outfit!!");
                     System.out.println("Would you like to play some mini games to acquire more?");
-                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Maze\n4) Play Rock Paper Scissors\n5) Be broke then...");
+                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Rock Paper Scissors\n4) Play Maze\n5) Be broke then...");
 
                     choice = super.getScanner().nextInt();
 
