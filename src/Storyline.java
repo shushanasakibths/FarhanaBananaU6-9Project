@@ -24,8 +24,8 @@ public class Storyline {
         end();
     }
 
-    public void title() {
-        System.out.println("Here is the title of the story!");
+    public String title(){
+        return "Title";
     }
 
     public void description() {
@@ -58,10 +58,15 @@ public class Storyline {
             RPSReg rpsGame = new RPSReg();
             rpsGame.play();
         } else if (choice == 4) {
-            MazeReg mazeGame = new MazeReg();
-            mazeGame.playGame();
+            MazeGame mazeGame = new MazeGame();
         } else {
             System.out.println("Tough luck! No diamonds for you...");
         }
     }
+
+
+
+
+
+
 }

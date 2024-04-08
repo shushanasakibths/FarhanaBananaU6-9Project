@@ -1,56 +1,67 @@
-import java.util.Scanner;
 import java.util.Random;
-public class RPSReg {
-    public static void main(String[] args) {
-        RPSReg game = new RPSReg();
-        game.play();
+import java.util.Scanner;
+
+public class RPSReg extends YourName{
+
+    private static final int ROCK = 1;
+    private static final int PAPER = 2;
+    private static final int SCISSORS = 3;
+
+    private int playerScore;
+    private int botScore;
+
+    public RPSReg() {
+        this.playerScore = 0;
+        this.botScore = 0;
     }
 
-    public void play(){
+    public void play() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        System.out.println("Welcome to rock, paper, scissors!");
+        System.out.println();
+        while (playerScore < 2 && botScore < 2) {
+            System.out.print("Enter your choice (1 for Rock, 2 for Paper, 3 for Scissors): ");
+            int playerChoice = scanner.nextInt();
 
-        while (true){
-            System.out.println("Enter your move: rock, paper, or scissors (to exit the game, type 'quit')");
-            String player = scanner.nextLine().toLowerCase();
-
-            if(player.equals("quit")){
-                System.out.println("Thanks for playing!");
-                break;
+            if (playerChoice < 1 || playerChoice > 3) {
+                System.out.println("Invalid choice. Please enter a number between 0 and 2.");
+                continue;
             }
 
-            if(!player.equals("rock") && !player.equals("paper") && !player.equals("scissors")){
-                System.out.println("Invalid move, please enter one of the choices mentioned above.");
-                return;
+            int botChoice = random.nextInt(4);
+
+            System.out.println("Bot chose: " + botChoice);
+
+            if (playerChoice == botChoice) {
+                System.out.println("It's a tie!");
+            } else if ((playerChoice == ROCK && botChoice == SCISSORS) ||
+                    (playerChoice == PAPER && botChoice == ROCK) ||
+                    (playerChoice == SCISSORS && botChoice == PAPER)) {
+                System.out.println("You win this round!");
+                System.out.println();
+                playerScore++;
+            } else {
+                System.out.println("Bot wins this round! Heh...");
+                System.out.println();
+                botScore++;
             }
 
-            //the 3 refers to the 3 choices
-            int computerIdx = random.nextInt(3);
-            String computer = "";
-            switch (computerIdx){
-                case 0:
-                    computer = "rock";
-                    break;
-                case 1:
-                    computer = "paper";
-                    break;
-                case 2:
-                    computer = "scissors";
-                    break;
-            }
-
-            System.out.println("Computer chose: " + computer);
-
-            if(player.equals(computer)){
-                System.out.println("It's a tie!!");
-            } else if ((player.equals("rock") && computer.equals("scissors")) ||
-                    (player.equals("paper") && computer.equals("rock")) ||
-                    (player.equals("scissors") && computer.equals("paper"))){
-                System.out.println("You win!!");
-            } else{
-                System.out.println("You lose!!");
-            }
+            System.out.println("SCORES\nYou: " + playerScore + "\nBot: " + botScore);
         }
+
+        if (playerScore == 2) {
+            System.out.println("Congratulations! You win the game! Here's five diamonds...");
+            super.earnDiamonds(5);
+        } else {
+            System.out.println("Sorry, the bot wins the game. How unfortunate.....");
+        }
+
         scanner.close();
+    }
+
+    public static void main(String[] args) {
+        RPSReg rps = new RPSReg();
+        rps.play();
     }
 }

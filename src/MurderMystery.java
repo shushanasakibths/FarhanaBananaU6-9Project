@@ -8,8 +8,8 @@ public class MurderMystery extends Storyline{
     }
 
     @Override
-    public void title(){
-        System.out.println("Lights Out: An Original Farhana Banana Story");
+    public String title(){
+        return "Lights Out: An Original Farhana Banana Story";
     }
 
     @Override

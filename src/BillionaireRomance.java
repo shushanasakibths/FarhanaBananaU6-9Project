@@ -11,8 +11,8 @@ public class BillionaireRomance extends Storyline {
     }
 
     @Override
-    public void title(){
-        System.out.println("King of Wrath: Retold");
+    public String title(){
+        return Colors.PURPLE + "King of Wrath: Retold" + Colors.RESET;
     }
 
     @Override
@@ -22,6 +22,7 @@ public class BillionaireRomance extends Storyline {
 
     @Override
     public void beginning() {
+        System.out.println();
         System.out.println("Blood rushes to your head, betrayal simmering in the pit of your stomach.");
         System.out.println("How could your parents do this to you? You've done everything right. So why?");
         System.out.println("Chad stands before you, tall and imposing. His jaw clenches at the sight of your hateful, " + super.getPlayer().getCharacter().getEyes()[0] + " eyes.");
@@ -29,7 +30,7 @@ public class BillionaireRomance extends Storyline {
         System.out.println("His voice drips with sarcasm, speaking to you as if you were a child who did wrong.");
         System.out.println("Chad Archibald the Fifteenth, top 5 billionaire under 40 on Forbes, CEO of Vanguard. You've met him before, though far less civil.");
         System.out.println("You raise your head, staring him dead in the eye. Your parents have arranged a marriage for you with the man who killed your sister. You have a year till the wedding...");
-        System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Greet him with a strained smile\n2) Insult him.");
+        System.out.println(Colors.RED + "CHOICE: " + Colors.RESET + "\n1) Greet him with a strained smile\n2) Insult him.\n" + Colors.BLUE + "DIAMONDS COLLECTED: " + Colors.RESET + super.getPlayer().getDiamonds());
         int choice = super.getScanner().nextInt();
         switch (choice) {
             case 1:
@@ -41,6 +42,9 @@ public class BillionaireRomance extends Storyline {
                 System.out.println("You can't contain your anger any longer.");
                 System.out.println(Colors.BLUE + "Chad: " + Colors.RESET + "Aren’t you as charming as ever? If you intend to be this childish throughout our arrangement, then I assure you, it will only make your life miserable.");
                 System.out.println("The look of disdain on his face only intensifies your burning resentment.");
+                System.out.println(Colors.PURPLE + "You: " + Colors.RESET + "You don't deserve my respect.");
+                System.out.println("The venom in your voice does nothing to make him flinch. His jaw clenches and unclenches.");
+                System.out.println(Colors.BLUE + "Chad: " + Colors.RESET + "I suppose that's true. Still, I advise you put your petty emotions and the past aside, if you know what is best.");
                 break;
             default:
                 System.out.println("Chad laughs at your silence, walking away to dine with your parents.");
@@ -59,7 +63,6 @@ public class BillionaireRomance extends Storyline {
         System.out.println("You want to impress Chad and the outfit perfectly suits your " + super.getPlayer().getCharacter().getEyes()[3] + " eyes!" );
         System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Wear that outfit and stun Chad!" + Colors.BLUE + " 10 DIAMONDS" + Colors.RESET + "\n2) Take the photoshoot in your hoodie that you haven't washed in 5 days");
         choice = super.getScanner().nextInt();
-
 
         switch (choice) {
             case 1:

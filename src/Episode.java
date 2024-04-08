@@ -36,7 +36,7 @@ public class Episode extends YourName{
 
     private void playStory(int index) {
         Storyline selectedStory = stories.get(index);
-        System.out.println("You've chosen to play the " + selectedStory.getClass().getSimpleName() + " story!");
+        System.out.println("You've chosen to play the " + selectedStory.title() + " story!");
         System.out.println("-------------------------------------------------");
         selectedStory.start();
     }
