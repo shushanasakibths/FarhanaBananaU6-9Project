@@ -18,6 +18,7 @@ public class Episode extends YourName{
     public void introduction() {
         System.out.println("Welcome to 'Choose Your Own Adventure' Episode!");
         System.out.println("In this episode, you'll have the opportunity to experience two thrilling stories:");
+        System.out.println();
         System.out.println(Colors.PURPLE + "1) Billionaire Romance" + Colors.RESET);
         stories.get(0).description();
         System.out.println();

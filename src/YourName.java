@@ -14,7 +14,7 @@ public class YourName {
 
     public YourName() {
         this.inventory = new ArrayList<>();
-        diamondsCollected = 10;
+        diamondsCollected = 5;
         scanner = new Scanner(System.in);
     }
 

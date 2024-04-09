@@ -98,6 +98,47 @@ public class BillionaireRomance extends Storyline {
         }
         System.out.println("The photographer insists you two get up close and personal for the photos.");
         System.out.println("It is terribly awkward, but you comply for appearance's sakes.");
+        System.out.println("Chad rolls his eyes, mustering a strained smile against your lips for the photo.");
+        System.out.println(Colors.GREEN + "Photographer: " + Colors.RESET + "C'mon!! What is this, church?! Lemme get a smooch for this shoot!!");
+        System.out.println("You want to strangle her to death but refrain. Chad exhales sharply, his hand tightening around your waist.");
+        System.out.println(Colors.BLUE + "Chad: " + Colors.RESET + "Let's get this over with.");
+        System.out.println("A shiver runs down your spine. You can tell he had tuna for lunch...");
+        System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) KISS KISS FALL IN LOVE" + Colors.BLUE + " 10 DIAMONDS" + Colors.RESET + "\n2) Push him away and scream at him");
+        choice = super.getScanner().nextInt();
+
+        switch (choice) {
+            case 1:
+                if (super.getPlayer().getDiamonds() >= 10) {
+                    super.getPlayer().spendDiamonds(10);
+                    System.out.println("You decide be brave. Your tiptoe and brush your lips against his, like the flutter of a butterfly's wings.");
+                    System.out.println("His eyes widen in surprise. He laughs before cupping your cheek, drawing you in...");
+                    System.out.println(Colors.GREEN + "Photographer: " + Colors.RESET +  "That's it hehe. Lemme get a dip shot too!!!! For the media...");
+                } else {
+                    System.out.println("You do not have enough diamonds to make this choice.");
+                    System.out.println("Would you like to play minigames to earn diamonds?");
+                    System.out.println(Colors.RED + " CHOICE: " + Colors.RESET + "\n1) Play Wordle\n2) Play TicTacToe\n3) Play Rock Paper Scissors\n4) Play Maze\n5) Be broke then...");
+
+                    choice = super.getScanner().nextInt();
+
+                    if (choice > 4 || choice < 1) {
+                        System.out.println(Colors.PURPLE + "You: " + Colors.RESET + "EW YOUR BREATH STINKS!!!!");
+                        System.out.println("Chad backs away, mortified. He covers his mouth with his hand, clearing his throat, asking to be excused.");
+                        System.out.println("The photographer is stunned...");
+                    } else {
+                        super.playMinigames(choice);
+                    }
+                }
+                break;
+            case 2:
+                System.out.println(Colors.PURPLE + "You: " + Colors.RESET + "EW YOUR BREATH STINKS!!!!");
+                System.out.println("Chad backs away, mortified, face blooming bright red. He covers his mouth with his hand, clearing his throat, asking to be excused.");
+                System.out.println("The photographer is stunned...");
+                break;
+            default:
+                System.out.println("Invalid choice. Please select either 1 or 2.");
+                break;
+        }
+        System.out.println("That was the worst time ever!!");
 
     }
 
